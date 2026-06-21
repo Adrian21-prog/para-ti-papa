@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día del Padre</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="mobile-container">
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'carta')">✉ CARTA</button>
+        <button class="tab-btn" onclick="openTab(event, 'razones')">❤ RAZONES</button>
+        <button class="tab-btn" onclick="openTab(event, 'recuerdos')">📸 RECUERDOS</button>
+    </div>
+
+    <div id="carta" class="tab-content active-content">
+        <div class="card">
+            <span class="subtitle">CON TODO MI AMOR</span>
+            <h2 class="title">Una dedicatoria para ti</h2>
+            <div class="gold-line"></div>
+
+            <p class="poem-text">
+                Papá, hay palabras que no alcanzan para describir todo lo que eres.<br><br>
+                Eres ejemplo, fuerza y guía. Gracias por estar siempre cuando más te necesito.<br><br>
+                Tu amor y tus consejos han sido un regalo invaluable en mi vida. No sé cómo pagarte todo lo que has hecho por mí.<br>
+                Gracias por todo. Te quiero ❤️
+            </p>
+
+            <div class="avatar-box">
+                <img src="images/papa.jpg" alt="Foto de mi papá" class="avatar-img" />
+            </div>
+
+            <p class="love-text">Con mucho amor ❤</p>
+
+            <div class="badge">⭐ EL MEJOR PAPÁ DEL MUNDO ⭐</div>
+
+            <div class="audio-player">
+                <button class="play-btn" id="btnPlay" onclick="toggleAudio()">▶</button>
+                <div class="audio-info">
+                    <span class="song-title">Gracias papá</span>
+                    <span class="song-artist">Diomedes Díaz</span>
+                </div>
+                <audio id="bgAudio" src="audio/miviejo.mp3"></audio>
+            </div>
+        </div>
+    </div>
+
+    <div id="razones" class="tab-content">
+        <div class="card">
+            <span class="subtitle">POR QUÉ ERES EL MEJOR</span>
+            <h2 class="title">Razones para quererte</h2>
+            <div class="gold-line"></div>
+
+            <div class="reason-box">
+                <span class="reason-num">01</span>
+                <div class="reason-text">
+                    <h3>Tu paciencia infinita</h3>
+                    <p>Siempre encontraste tiempo para explicarme las cosas, sin importar cuántas veces preguntara.</p>
+                </div>
+            </div>
+
+            <div class="reason-box">
+                <span class="reason-num">02</span>
+                <div class="reason-text">
+                    <h3>Tu fuerza silenciosa</h3>
+                    <p>Nunca te vi rendirte. Me enseñaste que los problemas se enfrentan, no se eluden.</p>
+                </div>
+            </div>
+
+            <div class="reason-box">
+                <span class="reason-num">03</span>
+                <div class="reason-text">
+                    <h3>Tu sentido del humor</h3>
+                    <p>Tus bromas y risas siempre logran alegrar el hogar en cualquier momento.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="recuerdos" class="tab-content">
+        <div class="card">
+            <span class="subtitle">MOMENTOS QUE ATESORO</span>
+            <h2 class="title">Recuerdos contigo</h2>
+            <div class="gold-line"></div>
+
+            <div class="grid-recuerdos">
+                <div class="memory-item">
+                    <span class="memory-icon">🙌</span>
+                    <h3>Gracias por todo el esfuerzo</h3>
+                    <p>Las veces que hemos pasado juntos en familia.</p>
+                </div>
+
+                <div class="memory-item">
+                    <span class="memory-icon">🍕</span>
+                    <h3>Las cenas</h3>
+                    <p>La mesa llena, todos juntos. Esos momentos no tienen precio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+
+    function toggleAudio() {
+        var audio = document.getElementById("bgAudio");
+        var btn = document.getElementById("btnPlay");
+        if (audio.paused) {
+            audio.play();
+            btn.innerText = "⏸";
+        } else {
+            audio.pause();
+            btn.innerText = "▶";
+        }
+    }
+</script>
+</body>
+</html>
